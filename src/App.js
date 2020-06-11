@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import './App.css';
 import Zamowienie from './components/zamowienie';
 import Skomponuj from './components/skomponuj';
+import {BrowserRouter as Router, Route
+
+} from 'react-router-dom'
+import koszyk from './components/koszyk';
 
 function App() {
 
@@ -12,6 +16,8 @@ function App() {
   }
 
   return (
+    <Router>
+      <Route path='/' component={koszyk} />
     <div className="App">
       
       <div className="content">
@@ -19,8 +25,11 @@ function App() {
         <Zamowienie nowaPizza={pizza}/>
       </div>
       
-    </div>
+      
+     </div>
+    </Router>
   );
 }
+
 
 export default App;
